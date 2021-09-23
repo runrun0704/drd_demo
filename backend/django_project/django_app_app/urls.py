@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path,include
+from .views import demofunc
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',include('django_app_app.urls'))
+    path('demo/',demofunc,name='demo'),
 ]
