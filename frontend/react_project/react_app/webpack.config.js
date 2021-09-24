@@ -1,11 +1,12 @@
 const path = require('path');
+const webpack = require("webpack");
 
 module.exports = {
     mode: 'development',
     entry: './src/index.js',//buildするファイル
     output: {
         filename: 'bundle.js',//build後のファイル名
-        path: path.join(__dirname, '../../../../backend/django_project/static/js') //buildファイルが作成される場所
+        path: path.join(__dirname, '../../../backend/django_project/static/js') //buildファイルが作成される場所
     },
     module: {
         rules: [
@@ -25,6 +26,14 @@ module.exports = {
           }
         ]
       },
+      optimization: {
+        minimize: true,
+      },
+      plugins: [
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV' : JSON.stringify('production')
+        })
+      ],
       resolve: {
         extensions: ['.js', '.jsx', '.json']
       }
