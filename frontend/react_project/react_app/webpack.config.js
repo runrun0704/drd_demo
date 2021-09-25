@@ -6,8 +6,8 @@ module.exports = {
     entry: './src/index.js',//buildするファイル
     output: {
         filename: 'bundle.js',//build後のファイル名
-        path: path.join(__dirname, '../../../backend/django_project/static/js') //buildファイルが作成される場所
-    },
+        path: path.join(__dirname, '../../../backend/django_project/django_app_app/static/js'),//buildファイルが作成される場所
+      },
     module: {
         rules: [
           {
