@@ -4,7 +4,7 @@ class Demo extends React.Component{
     render(){
         return(
             <dev>
-                <h2>this is demo</h2>
+                <h2>this is demo!</h2>
             </dev>
         )
     }

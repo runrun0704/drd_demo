@@ -30,6 +30,9 @@ module.exports = {
       optimization: {
         minimize: true,
       },
+      watchOptions: {
+        poll: 1000
+      },
       plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV' : JSON.stringify('production')
