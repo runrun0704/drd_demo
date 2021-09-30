@@ -1,12 +1,14 @@
 import React from "react";
 import Demo from "./Demo";
+import ContactForm from "./ContactForm"
 
 const App = () => {
   return (
     <div>
-      <p>React here!!</p>
-
-      <Demo/>
+      <Demo
+        demo='demo'
+      />
+      <ContactForm/>
     </div>
   );
 };
