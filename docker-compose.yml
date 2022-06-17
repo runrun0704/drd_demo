@@ -10,8 +10,10 @@ services:
     context: ./backend/.
     dockerfile: DockerfileDjango
    tty: true 
-   command: python3 manage.py runserver 0.0.0.0:8000
+   #一回目の"docker-compose up -d"は"django-admin startproject プロジェクト名"
+   command: python3 manage.py runserver 0.0.0.0:8000 
    volumes:
+    #path指定場所に注意。manage.pyがある階層を指定。
     - ./backend/django_project:/code
    ports:
     - "8000:8000"
@@ -23,8 +25,12 @@ services:
     context: ./frontend/.
     dockerfile: DockerfileReact
    tty: true 
+   #直接"npx create-react-app プロジェクト名"→"cd プロジェクト名"→"yarn start"
+   #その後の"docker-compose up -d"は下のコマンドで開発環境が始動する。
    command:  "yarn start"
    volumes:
+    #1回目の"docker-compose up -d"は"./frontend/react_project"を指定。
+    #2回目の"docker-compose up -d"は"./frontend/react_project/react_app（プロジェクト名）"
     - ./frontend/react_project/react_app:/code
    ports:
     - "3000:3000"

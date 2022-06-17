@@ -11,6 +11,7 @@ class ContactForm extends React.Component{
             hasPasswordError:false
         }
     }
+    
     handleNameChange(event){
         const inputValueName = event.target.value;
         const isEmptyName = inputValueName==='';

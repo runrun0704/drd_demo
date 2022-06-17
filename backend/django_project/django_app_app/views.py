@@ -8,4 +8,4 @@ def demofunc(request):
     return HttpResponse('HelloWorld')
 
 class indexfunc(TemplateView):
-    template_name = 'index.html'    
+    template_name = 'index.htm()l'    
